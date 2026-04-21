@@ -15,8 +15,8 @@ import (
 
 	"github.com/ethereum/hive/internal/libdocker"
 	"github.com/ethereum/hive/internal/libhive"
-	"github.com/lmittmann/tint"
 	docker "github.com/fsouza/go-dockerclient"
+	"github.com/lmittmann/tint"
 )
 
 type buildArgs map[string]string
@@ -157,12 +157,12 @@ Otherwise, it looks for files in the $HOME directory:
 		if dockerClient == nil {
 			fatal("Docker client not available for cleanup operations")
 		}
-		
+
 		client, ok := dockerClient.(*docker.Client)
 		if !ok {
 			fatal("Invalid Docker client type")
 		}
-		
+
 		if *listContainers {
 			err := libhive.ListHiveContainers(context.Background(), client, *cleanupInstance)
 			if err != nil {
