@@ -1,0 +1,5 @@
+- client: zevm-stateless
+  nametag: local-image
+  build_args:
+    baseimage: zevm-stateless
+    tag: latest
